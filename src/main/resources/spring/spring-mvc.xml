@@ -31,12 +31,27 @@
     <!--<mvc:resources mapping="/image/**" location="/statics/images/"/>-->
 
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+
+            <!-- 解决@ResponseBody中文乱码 -->
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
 
     <!-- BEGIN freemarker configuration -->
     <bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/WEB-INF/views/"/>
+        <!-- 设置页面中文乱码问题 -->
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="defaultEncoding">UTF-8</prop>
+            </props>
+        </property>
     </bean>
     <bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="location" value="/WEB-INF/freemarker.properties"/>

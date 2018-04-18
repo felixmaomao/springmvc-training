@@ -1,0 +1,9 @@
+<html>
+<body>
+<h3>${owner.id}</h3>
+<h3>${owner.name}</h3>
+<h3>${owner.sex}</h3>
+<h3>${owner.pets[0].petId}</h3>
+<h3>${owner.pets[0].name}</h3>
+</body>
+</html>
