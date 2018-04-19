@@ -107,5 +107,19 @@ public class HelloWorldController {
         return pet;
     }
 
+    // @SessionAttribute
+
+    // @CookieValue
+
+    // Asynchronous Request Processing
+
+    // HTTP Streaming
+
+    // HandlerInterceptor
+
+    // redirect forward
+
+    // build uris
+
 
 }
