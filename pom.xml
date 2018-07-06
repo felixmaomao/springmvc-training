@@ -3,9 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>maven-springmvc</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>maven-springmvc Maven Webapp</name>
+    <modules>
+        <module>springboot-training</module>
+    </modules>
+    <name>maven-springmvc Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
     <jackson.version>2.8.5</jackson.version>
